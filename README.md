@@ -29,8 +29,10 @@ CloudFront CDN supports using S3 as an origin server so you can significantly re
 
 Installation
 ------------
-
-See the [Installation](https://github.com/arkadedigital/magento2-s3/wiki/Installation) page on our wiki.
+    composer config repositories.magento2-s3 vcs https://github.com/4dhk/magento2-s3
+    composer require arkade/magento2-s3:dev-master
+    php bin/magento module:enable Arkade_S3
+    php bin/magento setup:upgrade
 
 Support
 -------
