@@ -35,7 +35,11 @@ Run following command
     php bin/magento module:enable Arkade_S3
     php bin/magento setup:upgrade
 
-Go to stores -> configuration -> Advanced -> System -> Media Storage, change to Amazon S3 and press Synchronize.
+Go to Stores -> Configuration -> ARKADE EXTENSIONS, enter s3 information.
+
+Go to Stores -> Configuration -> Advanced -> System -> Media Storage, change to Amazon S3 and press Synchronize.
+
+Go to Stores -> Configuration -> General -> Web. Change the Base URL for User Media Files and Secure Base URL for User Media Files to s3 url or cloud front url.
 
 Support
 -------
