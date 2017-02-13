@@ -1,5 +1,5 @@
-Arkade S3 Extension
-===================
+Arkade S3 Extension for Magento 2
+=================================
 
 Arkade's S3 extension for Magento 2 allows retailers to upload their catalogue and WYSIWYG images straight to Amazon S3.
 
@@ -29,25 +29,18 @@ CloudFront CDN supports using S3 as an origin server so you can significantly re
 
 Installation
 ------------
-Run following command
 
-    composer config repositories.magento2-s3 vcs https://github.com/4dhk/magento2-s3
-    composer require arkade/magento2-s3:dev-master
-    php bin/magento module:enable Arkade_S3
-    php bin/magento setup:upgrade
-
-Go to Stores -> Configuration -> ARKADE EXTENSIONS, enter s3 information.
-
-Go to Stores -> Configuration -> Advanced -> System -> Media Storage, change to Amazon S3 and press Synchronize.
-
-Go to Stores -> Configuration -> General -> Web. Change the Base URL for User Media Files and Secure Base URL for User Media Files to s3 url or cloud front url.
+See the [Installation](https://github.com/arkadedigital/magento2-s3/wiki/Installation) page on our wiki.
 
 Support
 -------
 
 We have a [Troubleshooting](https://github.com/arkadedigital/magento2-s3/wiki/Troubleshooting) page on our wiki that we'll keep up to date with any issues that the community might have with the extension.
 
-If you can't find the answer you're looking for, however, feel free to [create a GitHub issue](https://github.com/arkadedigital/magento2-s3/issues/new) or [send us an email](mailto:support@arkade.com.au) for support regarding this extension.
+If you can't find the answer you're looking for, however, feel free to [create a GitHub issue](https://github.com/arkadedigital/magento2-s3/issues/new) for support regarding this extension.
+
+FAQs
+----
 
 ### Does this extension upload my log files?
 

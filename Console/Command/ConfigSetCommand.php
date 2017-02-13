@@ -35,6 +35,11 @@ class ConfigSetCommand extends \Symfony\Component\Console\Command\Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        if (!$input->getOption('region') && !$input->getOption('bucket') && !$input->getOption('secret-key') && !$input->getOption('access-key-id')) {
+            $output->writeln($this->getSynopsis());
+            return;
+        }
+
         $errors = $this->validate($input);
         if ($errors) {
             $output->writeln('<error>' . implode('</error>' . PHP_EOL .  '<error>', $errors) . '</error>');
@@ -82,7 +87,7 @@ class ConfigSetCommand extends \Symfony\Component\Console\Command\Command
         $errors = [];
         if ($input->getOption('region')) {
             if (!$this->helper->isValidRegion($input->getOption('region'))) {
-                $errors[] =  sprintf('The region "%s" is invalid.', $input->getOption('region'));
+                $errors[] = sprintf('The region "%s" is invalid.', $input->getOption('region'));
             }
         }
         return $errors;
