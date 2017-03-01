@@ -42,4 +42,9 @@
     <type name="Magento\Store\Model\Store">
         <plugin name="arkade_s3_model_store_store_plugin" type="Arkade\S3\Model\Store\Store\Plugin" />
     </type>
+    
+    <type name="Magento\MediaStorage\Model\File\Uploader">
+        <plugin name="arkade_s3_model_mediastorage_file_uploader_plugin" type="Arkade\S3\Model\MediaStorage\File\Uploader\Plugin" />
+    </type>
+ 
 </config>
