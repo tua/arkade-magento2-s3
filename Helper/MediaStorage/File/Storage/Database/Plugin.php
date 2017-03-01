@@ -59,7 +59,10 @@ class Plugin
                 return false;
             }
 
-            return $subject->getStorageFileModel()->saveFile($file->getData(), true);
+            
+            $result = $subject->getStorageFileModel()->saveFile($file->getData(), true);
+            $s3result = $this->storageModel->saveFile($subject->getMediaRelativePath($filename));
+            return $result;
         }
         return $proceed($filename);
     }
