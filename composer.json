@@ -1,8 +1,8 @@
 {
-  "name": "arkade/magento2-s3",
+  "name": "hpols/arkade-magento2-s3",
   "description": "Use Amazon S3 as the file storage backend for your store.",
   "type": "magento2-module",
-  "version": "1.0.2",
+  "version": "11.0.2",
   "license": "MIT",
   "authors": [
     {
