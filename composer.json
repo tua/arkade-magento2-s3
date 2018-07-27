@@ -1,5 +1,5 @@
 {
-  "name": "hpols/arkade-magento2-s3",
+  "name": "tua/arkade-magento2-s3",
   "description": "Use Amazon S3 as the file storage backend for your store.",
   "type": "magento2-module",
   "version": "11.0.2",
