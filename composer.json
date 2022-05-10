@@ -2,7 +2,7 @@
   "name": "tua/arkade-magento2-s3",
   "description": "Use Amazon S3 as the file storage backend for your store.",
   "type": "magento2-module",
-  "version": "11.1.0",
+  "version": "11.2.0",
   "license": "MIT",
   "authors": [
     {
