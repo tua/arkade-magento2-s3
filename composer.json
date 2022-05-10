@@ -29,7 +29,6 @@
         "aws"
     ],
   "require": {
-    "aws/aws-sdk-php": "3.x",
-    "guzzlehttp/psr7": "^1.8.3 || ^2.1"
+    "aws/aws-sdk-php": "3.x"
   }
 }
