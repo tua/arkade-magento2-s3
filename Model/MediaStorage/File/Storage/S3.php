@@ -200,7 +200,7 @@ class S3 extends DataObject
                     'ACL' => 'public-read',
                     'Body' => $file['content'],
                     'Bucket' => $this->getBucket(),
-                    'ContentType' => \GuzzleHttp\Psr7\mimetype_from_filename($file['filename']),
+                    'ContentType' => \GuzzleHttp\Psr7\MimeType::fromFilename($file['filename']),
                     'Key' => $file['directory'] . '/' . $file['filename']
                 ]);
             } catch (\Exception $e) {
@@ -221,7 +221,7 @@ class S3 extends DataObject
                 'ACL' => 'public-read',
                 'Body' => $file['content'],
                 'Bucket' => $this->getBucket(),
-                'ContentType' => \GuzzleHttp\Psr7\mimetype_from_filename($file['filename']),
+                'ContentType' => \GuzzleHttp\Psr7\MimeType::fromFilename($file['filename']),
                 'Key' => $filename
             ]);
         } catch (\Exception $e) {
