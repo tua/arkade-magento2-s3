@@ -33,7 +33,21 @@ class ConfigSetCommand extends \Symfony\Component\Console\Command\Command
         parent::configure();
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    /**
+     * {@inheritdoc}
+     */
+    protected function execute(
+        InputInterface $input,
+        OutputInterface $output
+    ) {
+        $this->state->emulateAreaCode(
+            'adminhtml',
+            [$this, 'process'],
+            [$input, $output]
+        );
+    }
+
+    public function process(InputInterface $input, OutputInterface $output)
     {
         if (!$input->getOption('region') && !$input->getOption('bucket') && !$input->getOption('secret-key') && !$input->getOption('access-key-id')) {
             $output->writeln($this->getSynopsis());
@@ -46,7 +60,6 @@ class ConfigSetCommand extends \Symfony\Component\Console\Command\Command
             return;
         }
 
-        $this->state->setAreaCode('adminhtml');
         $config = $this->configFactory->create();
 
         if (!empty($input->getOption('access-key-id'))) {

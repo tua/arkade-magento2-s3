@@ -201,6 +201,7 @@ class S3 extends DataObject
                     'Body' => $file['content'],
                     'Bucket' => $this->getBucket(),
                     'ContentType' => \GuzzleHttp\Psr7\MimeType::fromFilename($file['filename']),
+                    'CacheControl' => 'max-age=31536000',
                     'Key' => $file['directory'] . '/' . $file['filename']
                 ]);
             } catch (\Exception $e) {
@@ -222,6 +223,7 @@ class S3 extends DataObject
                 'Body' => $file['content'],
                 'Bucket' => $this->getBucket(),
                 'ContentType' => \GuzzleHttp\Psr7\MimeType::fromFilename($file['filename']),
+                'CacheControl' => 'max-age=31536000',
                 'Key' => $filename
             ]);
         } catch (\Exception $e) {
@@ -370,7 +372,7 @@ class S3 extends DataObject
      */
     public function getMediaBaseDirectory()
     {
-        if (is_null($this->mediaBaseDirectory)) {
+        if ($this->mediaBaseDirectory === null) {
             $this->mediaBaseDirectory = $this->storageHelper->getMediaBaseDir();
         }
         return $this->mediaBaseDirectory;

@@ -18,7 +18,7 @@ class Plugin
     {
         $storageModel = $proceed($storage, $params);
         if ($storageModel === false) {
-            if (is_null($storage)) {
+            if ($storage === null) {
                 $storage = $this->coreFileStorage->getCurrentStorageCode();
             }
             switch ($storage) {

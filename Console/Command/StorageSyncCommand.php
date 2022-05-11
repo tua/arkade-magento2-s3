@@ -43,7 +43,21 @@ class StorageSyncCommand extends \Symfony\Component\Console\Command\Command
         parent::configure();
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    /**
+     * {@inheritdoc}
+     */
+    protected function execute(
+        InputInterface $input,
+        OutputInterface $output
+    ) {
+        $this->state->emulateAreaCode(
+            'adminhtml',
+            [$this, 'process'],
+            [$input, $output]
+        );
+    }
+
+    public function process(InputInterface $input, OutputInterface $output)
     {
         $errors = $this->validate($input);
         if ($errors) {
@@ -103,7 +117,6 @@ class StorageSyncCommand extends \Symfony\Component\Console\Command\Command
         if ($input->getOption('enable')) {
             $output->writeln('Updating configuration to use S3.');
 
-            $this->state->setAreaCode('adminhtml');
             $config = $this->configFactory->create();
             $config->setDataByPath('system/media_storage_configuration/media_storage', \Arkade\S3\Model\MediaStorage\File\Storage::STORAGE_MEDIA_S3);
             $config->save();
@@ -122,16 +135,16 @@ class StorageSyncCommand extends \Symfony\Component\Console\Command\Command
     {
         $errors = [];
 
-        if (is_null($this->helper->getAccessKey())) {
+        if ($this->helper->getAccessKey() === null) {
             $errors[] = 'You have not provided an AWS access key ID. You can do so using our config script.';
         }
-        if (is_null($this->helper->getSecretKey())) {
+        if ($this->helper->getSecretKey() === null) {
             $errors[] = 'You have not provided an AWS secret access key. You can do so using our config script.';
         }
-        if (is_null($this->helper->getBucket())) {
+        if ($this->helper->getBucket() === null) {
             $errors[] = 'You have not provided an S3 bucket. You can do so using our config script.';
         }
-        if (is_null($this->helper->getRegion())) {
+        if ($this->helper->getRegion() === null) {
             $errors[] = 'You have not provided an S3 region. You can do so using our config script.';
         }
 

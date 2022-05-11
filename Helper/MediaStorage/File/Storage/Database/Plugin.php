@@ -41,7 +41,7 @@ class Plugin
 
     public function aroundGetStorageDatabaseModel(Database $subject, $proceed)
     {
-        if (is_null($this->storageModel)) {
+        if ($this->storageModel === null) {
             if ($subject->checkDbUsage() && $this->helper->checkS3Usage()) {
                 $this->storageModel = $this->s3StorageFactory->create();
             } else {
@@ -59,7 +59,7 @@ class Plugin
                 return false;
             }
 
-            
+
             $result = $subject->getStorageFileModel()->saveFile($file->getData(), true);
             $s3result = $this->storageModel->saveFile($subject->getMediaRelativePath($filename));
             if($s3result){

@@ -13,7 +13,8 @@
                 <field id="access_key" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Access Key</label>
                 </field>
-                <field id="secret_key" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="secret_key" type="obscure" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
                     <label>Secret Key</label>
                 </field>
                 <field id="bucket" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">

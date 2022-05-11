@@ -43,6 +43,10 @@ class S3
                 'label' => 'EU (Frankfurt)'
             ],
             [
+                'value' => 'ap-east-1',
+                'label' => 'Asia Pacific (Hong Kong)'
+            ],
+            [
                 'value' => 'ap-south-1',
                 'label' => 'Asia Pacific (Mumbai)'
             ],
@@ -65,6 +69,14 @@ class S3
             [
                 'value' => 'sa-east-1',
                 'label' => 'South America (Sao Paulo)'
+            ],
+            [
+                'value' => 'cn-north-1',
+                'label' => 'China (Beijing)'
+            ],
+            [
+                'value' => 'cn-northwest-1',
+                'label' => 'China (Ningxia)'
             ]
         ];
     }

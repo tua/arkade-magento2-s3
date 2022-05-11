@@ -14,7 +14,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      */
     public function checkS3Usage()
     {
-        if (is_null($this->useS3)) {
+        if ($this->useS3 === null) {
             $currentStorage = (int)$this->scopeConfig->getValue(Storage::XML_PATH_STORAGE_MEDIA);
             $this->useS3 = $currentStorage == Storage::STORAGE_MEDIA_S3;
         }
