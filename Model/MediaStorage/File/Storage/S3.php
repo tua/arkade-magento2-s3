@@ -197,7 +197,7 @@ class S3 extends DataObject
         foreach ($files as $file) {
             try {
                 $this->client->putObject([
-                    'ACL' => 'public-read',
+                    //'ACL' => 'public-read',
                     'Body' => $file['content'],
                     'Bucket' => $this->getBucket(),
                     'ContentType' => \GuzzleHttp\Psr7\MimeType::fromFilename($file['filename']),
@@ -219,7 +219,7 @@ class S3 extends DataObject
 
         try {
             $this->client->putObject([
-                'ACL' => 'public-read',
+                //'ACL' => 'public-read',
                 'Body' => $file['content'],
                 'Bucket' => $this->getBucket(),
                 'ContentType' => \GuzzleHttp\Psr7\MimeType::fromFilename($file['filename']),
@@ -244,7 +244,7 @@ class S3 extends DataObject
                 'Bucket' => $this->getBucket(),
                 'Key' => $newFilePath,
                 'CopySource' => $this->getBucket() . '/' . $oldFilePath,
-                'ACL' => 'public-read'
+                //'ACL' => 'public-read'
             ]);
         } catch (S3Exception $e) {
         }
@@ -258,7 +258,7 @@ class S3 extends DataObject
                 'Bucket' => $this->getBucket(),
                 'Key' => $newFilePath,
                 'CopySource' => $this->getBucket() . '/' . $oldFilePath,
-                'ACL' => 'public-read'
+                //'ACL' => 'public-read'
             ]);
 
             $this->client->deleteObject([
