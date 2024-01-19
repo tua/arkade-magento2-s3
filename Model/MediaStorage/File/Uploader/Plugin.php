@@ -1,11 +1,20 @@
 <?php
+
 namespace Arkade\S3\Model\MediaStorage\File\Uploader;
 
 class Plugin
 {
+    /**
+     * @var \Arkade\S3\Helper\Data
+     */
     private $helper;
+
     private $storageModel = null;
-    private $storageHelperstorageModel = null;
+
+    /**
+     * \Magento\MediaStorage\Helper\File\Storage\Database
+     */
+    private $storageHelper;
 
     public function __construct(
         \Arkade\S3\Helper\Data $helper,
@@ -26,7 +35,7 @@ class Plugin
             }
             $s3result = $this->storageModel->saveFile($this->storageHelper->getMediaRelativePath($result["path"].$result["file"]));
             if (!$s3result) {
-                $e = new Exception('Division by zero.', 0);
+                $e = new \Exception('Division by zero.', 0);
                 throw $e;
                 return;
             }
