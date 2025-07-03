@@ -47,8 +47,32 @@ class S3
                 'label' => 'Asia Pacific (Hong Kong)'
             ],
             [
+                'value' => 'ap-south-2',
+                'label' => 'Asia Pacific (Hyderabad)'
+            ],
+            [
+                'value' => 'ap-southeast-3',
+                'label' => 'Asia Pacific (Jakarta)'
+            ],
+            [
+                'value' => 'ap-southeast-5',
+                'label' => 'Asia Pacific (Malaysia)'
+            ],
+            [
+                'value' => 'ap-southeast-4',
+                'label' => 'Asia Pacific (Melbourne)'
+            ],
+            [
                 'value' => 'ap-south-1',
                 'label' => 'Asia Pacific (Mumbai)'
+            ],
+            [
+                'value' => 'ap-northeast-3',
+                'label' => 'Asia Pacific (Osaka)'
+            ],
+            [
+                'value' => 'ap-northeast-2',
+                'label' => 'Asia Pacific (Seoul)'
             ],
             [
                 'value' => 'ap-southeast-1',
@@ -59,24 +83,24 @@ class S3
                 'label' => 'Asia Pacific (Sydney)'
             ],
             [
-                'value' => 'ap-southeast-3',
-                'label' => 'Asia Pacific (Jakarta)'
+                'value' => 'ap-east-2',
+                'label' => 'Asia Pacific (Taipei)'
+            ],
+            [
+                'value' => 'ap-southeast-7',
+                'label' => 'Asia Pacific (Thailand)'
             ],
             [
                 'value' => 'ap-northeast-1',
                 'label' => 'Asia Pacific (Tokyo)'
             ],
             [
-                'value' => 'ap-northeast-2',
-                'label' => 'Asia Pacific (Seoul)'
-            ],
-            [
-                'value' => 'ap-northeast-3',
-                'label' => 'Asia Pacific (Osaka)'
-            ],
-            [
                 'value' => 'ca-central-1',
                 'label' => 'Canada (Central)'
+            ],
+            [
+                'value' => 'ca-west-1',
+                'label' => 'Canada West (Calgary)'
             ],
             [
                 'value' => 'eu-central-1',
@@ -91,16 +115,32 @@ class S3
                 'label' => 'Europe (London)'
             ],
             [
-                'value' => 'eu-west-3',
-                'label' => 'Europe (Paris)'
-            ],
-            [
                 'value' => 'eu-south-1',
                 'label' => 'Europe (Milan)'
             ],
             [
+                'value' => 'eu-west-3',
+                'label' => 'Europe (Paris)'
+            ],
+            [
+                'value' => 'eu-south-2',
+                'label' => 'Europe (Spain)'
+            ],
+            [
                 'value' => 'eu-north-1',
                 'label' => 'Europe (Stockholm)'
+            ],
+            [
+                'value' => 'eu-central-2',
+                'label' => 'Europe (Zurich)'
+            ],
+            [
+                'value' => 'il-central-1',
+                'label' => 'Israel (Tel Aviv)'
+            ],
+            [
+                'value' => 'mx-central-1',
+                'label' => 'Mexico (Central)'
             ],
             [
                 'value' => 'me-south-1',
